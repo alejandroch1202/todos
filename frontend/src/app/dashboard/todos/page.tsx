@@ -1,3 +1,5 @@
+// export const dynamic = 'force-dynamic'
+
 import { NewTodo, TodosGrid } from '@/components/todos'
 
 export const metadata = {
@@ -7,7 +9,8 @@ export const metadata = {
 
 export default async function TodosPage() {
   const { data } = await fetch('http://localhost:4000/api/v1/todos', {
-    cache: 'no-cache'
+    cache: 'no-store'
+    // next: { revalidate: 0 }
   }).then((res) => res.json())
 
   return (

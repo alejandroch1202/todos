@@ -1,13 +1,14 @@
 'use client'
-import { createTodo, removeCompletedTodos } from '@/services/todos'
-import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+// import { useRouter } from 'next/navigation'
 import { IoTrashOutline } from 'react-icons/io5'
+// import { createTodo, removeCompletedTodos } from '@/services/todos'
+import { createTodo, removeCompletedTodos } from '@/actions/todos'
 
 export const NewTodo = () => {
   const [description, setDescription] = useState('')
 
-  const router = useRouter()
+  // const router = useRouter()
 
   const onSumbit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -15,13 +16,13 @@ export const NewTodo = () => {
     setDescription('')
     const response = await createTodo(description)
     console.log({ response })
-    router.refresh()
+    // router.refresh()
   }
 
   const handleDelete = async () => {
     const response = await removeCompletedTodos()
     console.log({ response })
-    router.refresh()
+    // router.refresh()
   }
 
   return (

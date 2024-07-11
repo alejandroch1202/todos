@@ -1,3 +1,5 @@
+// export const dynamic = 'force-dynamic'
+
 import { NewTodo, TodosGrid } from '@/components/todos'
 
 export const metadata = {
@@ -9,6 +11,8 @@ export default async function ActionsPage() {
   const { data } = await fetch('http://localhost:4000/api/v1/todos', {
     // cache: 'no-cache'
   }).then((res) => res.json())
+
+  console.log('construido')
 
   return (
     <div>
