@@ -57,4 +57,17 @@ export class TodosService {
       });
     return { ok: true, message: 'ToDo eliminado correctamente' };
   }
+
+  async removeCompleted() {
+    const { deletedCount } = await this.todoModel.deleteMany({
+      isCompleted: true,
+    });
+    if (deletedCount === 0)
+      throw new NotFoundException({
+        ok: false,
+        message: 'No hay ToDos completados',
+      });
+
+    return { ok: true, message: 'ToDos eliminados correctamente' };
+  }
 }

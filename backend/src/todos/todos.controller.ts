@@ -44,4 +44,9 @@ export class TodosController {
   remove(@Param('id', ParseMongoIdPipe) id: string) {
     return this.todosService.remove(id);
   }
+
+  @Delete()
+  removeCompleted() {
+    return this.todosService.removeCompleted();
+  }
 }
