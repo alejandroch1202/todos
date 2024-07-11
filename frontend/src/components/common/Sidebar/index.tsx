@@ -5,6 +5,8 @@ import { SidebarItem } from '@/components/common'
 import {
   IoCalendarOutline,
   IoCheckboxOutline,
+  IoCodeWorking,
+  IoGrid,
   IoListOutline
 } from 'react-icons/io5'
 
@@ -19,6 +21,16 @@ const items = [
     title: 'Server Actions',
     icon: <IoListOutline />,
     path: '/dashboard/actions'
+  },
+  {
+    title: 'Cookies',
+    icon: <IoCodeWorking />,
+    path: '/dashboard/cookies'
+  },
+  {
+    title: 'Products',
+    icon: <IoGrid />,
+    path: '/dashboard/products'
   }
 ]
 
