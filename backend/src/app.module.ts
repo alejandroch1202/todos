@@ -9,7 +9,7 @@ import { CommonModule } from './common/common.module';
   imports: [
     ConfigModule.forRoot(),
     MongooseModule.forRoot(process.env.DATABASE_URL, {
-      dbName: 'todos',
+      dbName: 'test',
     }),
     TodosModule,
     SeedModule,
